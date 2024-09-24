@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: black;
+    background-color: #a1cdf3;
+}
+
+h1{ font-size: 3.5em; padding: 20px 12px;}
+h2{ font-size: 1.5em; padding: 20px 12px;} 
+p{ padding: 5px 12px;}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: #02206c;
+}
+
+
+header nav{
+    display: flex;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+header a{
+    padding: 20px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+header a:hover{
+    color: rgb(115, 200, 228);
+}
+
+.footer {
+    background-color: #274dac;
+    padding: 20px 0;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-links h4 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-links h3{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: rgb(115, 200, 228);
+    padding-left: 6px;
+}
+
+.social-links a {
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all .5s ease;
+}
+
+.social-links a:hover {
+    background-color:rgb(115, 200, 228);
+}
+
+.element-containerflex {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+.element-flexlightblue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media(max-width:991px) {
+    .footer-row {
+        text-align: center;
+    }
+
+    .footer-links {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+  }
