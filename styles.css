@@ -1,3 +1,11 @@
+:root {
+    --lavender: #B5C0D0;
+    --lavender-dark: #79818e;
+    --dutch-white: #F5E8DD;
+    --verde: #CCD3CA;
+    --rose: #EED3D9;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,47 +13,92 @@
     list-style: none;
 }
 
-
-
-body {
+html, body {
+    height: 100%;
     margin: 0;
     font-family: sans-serif;
-    color: black;
-    background-color: #a1cdf3;
+    color: white;
+    background-color: var(--lavender);
 }
 
-h1{ font-size: 3.5em; padding: 20px 12px;}
-h2{ font-size: 1.5em; padding: 20px 12px;} 
-p{ padding: 5px 12px;}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Esto permite que el contenido principal ocupe el espacio disponible */
+}
+
+h1 {
+    font-size: 3.5em;
+    padding: 20px 12px;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding: 20px 12px;
+}
+
+p {
+    padding: 5px 12px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-header{
-    background-color: #02206c;
+header {
+    background-color: var(--lavender);
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
-
-header nav{
+header nav {
     display: flex;
     text-align: center;
     padding-bottom: 10px;
 }
 
-header a{
+header a {
     padding: 20px 12px;
     text-decoration: none;
     font-weight: bold;
     color: white;
 }
 
-header a:hover{
-    color: rgb(115, 200, 228);
+header a:hover {
+    color: var(--lavender-dark);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos de manera uniforme */
+    align-items: center; /* Centra verticalmente */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu li {
+    flex: 1; /* Hace que cada elemento ocupe el mismo ancho */
+    text-align: center; /* Centra el texto dentro de cada <li> */
+}
+
+.menu a {
+    display: block;
+    padding: 15px; /* Ajusta el espacio alrededor del texto */
+    text-decoration: none;
+    color: white;
+    font-size: 16px; /* Tamaño de fuente opcional */
 }
 
 .footer {
-    background-color: #274dac;
+    background-color: var(--lavender);
     padding: 20px 0;
 }
 
@@ -58,6 +111,7 @@ header a:hover{
     width: 25%;
     padding: 0 15px;
 }
+
 .footer-links h4 {
     font-size: 20px;
     color: white;
@@ -67,7 +121,7 @@ header a:hover{
     display: inline-block;
 }
 
-.footer-links h3{
+.footer-links h3 {
     font-size: 18px;
     text-decoration: none;
     color: white;
@@ -75,7 +129,7 @@ header a:hover{
     margin-bottom: 15px;
 }
 
-.footer-links ul li a{
+.footer-links ul li a {
     font-size: 18px;
     text-decoration: none;
     color: white;
@@ -85,7 +139,7 @@ header a:hover{
 }
 
 .footer-links ul li a:hover {
-    color: rgb(115, 200, 228);
+    color: var(--lavender-dark);
     padding-left: 6px;
 }
 
@@ -103,10 +157,10 @@ header a:hover{
 }
 
 .social-links a:hover {
-    background-color:rgb(115, 200, 228);
+    background-color: var(--lavender-dark);
 }
 
-.element-containerflex {
+.element-container-flex {
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -116,7 +170,8 @@ header a:hover{
     color: white;
     font-weight: bold;
     font-size: 20px;
-  }
+}
+
 .element-flexlightblue {
     display: flex;
     justify-content: center;
@@ -125,9 +180,9 @@ header a:hover{
     height: 50px;
     margin: 0;
     padding: 0;
-  }
+}
 
-  @media(max-width:991px) {
+@media(max-width: 991px) {
     .footer-row {
         text-align: center;
     }
@@ -136,4 +191,4 @@ header a:hover{
         width: 100%;
         margin-bottom: 10px;
     }
-  }
+}
