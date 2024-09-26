@@ -9,20 +9,6 @@
 </head>
 <body>
     <header>
-        <!-- ** navegador segundo intento**
-       <div class="element-containerflex">
-           <div class="element-flexlightblue"><a href="./index.html">Home</a></div>
-           <div class="element-flexlightblue"><a href="./biografia.html">Biografía</a></div>
-           <div class="element-flexlightblue"><a href="./portfolio.html">Portfolio</a></div>
-           <div class="element-flexlightblue"><a href="./contacto.html">Contacto</a></div>
-       </div> </nav>  -->
-       <!-- ** navegador primer intento**
-       <nav>
-           <p><a href="./index.html">Home</a></p>
-           <p><a href="./biografia.html">Biografía</a></p>
-           <p><a href="./portfolio.html">Portfolio</a></p>
-           <p><a href="./contacto.html">Contacto</a></p>
-       </nav>  -->
        <div class="cotainer">
            <nav>
             <ul class="menu">
@@ -34,10 +20,37 @@
            </nav>
        </div>
    </header>
-    <section>
+    <main>
         <article>
             <h1>Contacto</h1>
         <p>Esta es la página de contacto</p>
+        <div class="form-container">
+            <h2>Formulario de Contacto</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+        </div>
+     <!-- Antiguo Formulario
         <form>
             <ul>
               <li> Nombre: <input type="text"></li>
@@ -47,8 +60,128 @@
             </ul>
             <br>
         </form>
+    -->
+    <!-- Segundo intento 
+    <form id="contactForm">
+        <label for="fname">Nombre:</label>
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Introduce nombre..."
+          minlength="3"
+          maxlenght="30"
+          required
+        />
+
+        <label for="lname">Apellidos:</label>
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder="Introduce apellidos..."
+          minlength="3"
+          maxlenght="30"
+          required
+        />
+
+        <label for="fname">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Introduce email..."
+          required
+        />
+
+        <label for="tlf">Teléfono:</label>
+        <input
+          type="tel"
+          id="tlf"
+          name="tlf"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+          placeholder="Introduce teléfono..."
+          required
+        />
+
+        <label for="favorite">¿Cuál es tu comida favorita?:</label>
+        <select id="favorite" name="favorite">
+          <option value="paella">Paella</option>
+          <option value="tacos">Tacos</option>
+          <option value="cebiche">Cebiche</option>
+          <option value="cuscus">Cuscus</option>
+        </select>
+
+        <label for="season">¿En qué época quieres viajar para comer?</label>
+        <div>
+          <label for="spring"
+            ><input
+              type="radio"
+              id="spring"
+              name="season"
+              value="spring"
+            />primavera</label
+          >
+
+          <label for="summer"
+            ><input
+              type="radio"
+              id="summer"
+              name="season"
+              value="summer"
+            />verano</label
+          >
+
+          <label for="autumn"
+            ><input
+              type="radio"
+              id="autumn"
+              name="season"
+              value="autumn"
+            />Otoño</label
+          >
+
+          <label for="winter"
+            ><input
+              type="radio"
+              id="winter"
+              name="season"
+              value="winter"
+            />Invierno</label
+          >
+        </div>
+
+        <label for="comments">¿Observaciones?</label>
+        <textarea
+          rows="2"
+          cols="30"
+          name="comments"
+          wrap="hard"
+          placeholder="Tus observaciones..."
+        ></textarea>
+        <div>
+          <label
+            ><input
+              type="checkbox"
+              id="accept"
+              value="accept"
+              name="accept"
+            />
+            Acepto los términos legales</label
+          >
+
+          <label for="spam"
+            ><input type="checkbox" id="spam" value="spam" name="spam" />
+            Acepto recibir publicidad</label
+          >
+        </div>
+
+        <input type="submit" value="Enviar" />
+      </form>
         </article>
-    </section>
+ --> 
+    </main>
+     
     <footer class="footer">
         <div class="container">
             <div class="footer-row">
