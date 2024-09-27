@@ -113,6 +113,12 @@ header a:hover {
     font-size: 16px; /* Tamaño de fuente opcional */
 }
 
+/*
+.textoOver {
+    position: relative;
+    top: 300px;
+}
+*/
 .imagen-ancho-completo {
     width: 100vw; /* 100% del ancho de la ventana de la pantalla */
     height: auto; /* Mantener la proporción de la imagen */
