@@ -130,7 +130,7 @@ header a:hover {
     height: auto;
     transition: transform 0.3s ease, opacity 0.3s ease; /* Añadí la transición para la opacidad */
     cursor: pointer;
-    opacity: 0.1; /* 10% de transparencia */
+    opacity: 0.3; /* 10% de transparencia */
 }
 
 .portfolio-item img:hover {
