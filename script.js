@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactForm');
 
+    // Función para abrir el lightbox con la imagen seleccionada
+        function openLightbox(img) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-image");
+            lightboxImg.src = img.src;
+            lightbox.style.display = "flex";
+        }
+
+// Función para cerrar el lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById("lightbox");
+            lightbox.style.display = "none";
+        }
+        
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 

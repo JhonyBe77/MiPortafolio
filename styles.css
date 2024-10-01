@@ -37,7 +37,6 @@ body {
     flex-direction: column;
 }
 
-
 main {
     align-self: center;
 }
@@ -113,12 +112,68 @@ header a:hover {
     font-size: 16px; /* Tamaño de fuente opcional */
 }
 
-/*
-.textoOver {
-    position: relative;
-    top: 300px;
+/* Estilo del portafolio */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 20px;
 }
-*/
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Añadí la transición para la opacidad */
+    cursor: pointer;
+    opacity: 0.1; /* 10% de transparencia */
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.1);
+    opacity: 1; /* Transparencia completa (sin transparencia) al hacer hover */
+}
+
+/* Estilos para el lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mobile-friendly */
+@media screen and (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
 .imagen-ancho-completo {
     width: 100vw; /* 100% del ancho de la ventana de la pantalla */
     height: auto; /* Mantener la proporción de la imagen */
@@ -128,34 +183,32 @@ header a:hover {
 #expSection > article > img {
     border-radius: 5px;
     display: block;
-  }
+}
   
-  #expSection {
+#expSection {
     width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
-  
     align-items: center;
     justify-content: space-around;
-  }
+}
   
-  #expSection > article:hover .overlay {
+#expSection > article:hover .overlay {
     opacity: 1;
-  }
-  
-  #expSection > article {
+}
+
+#expSection > article {
     position: relative;
     margin: 3px 3px;
-  }
-
+}
 
 form > div {
     display: flex;
     flex-direction: column;
     align-items: left;
-  }
+}
 
 .footer {
     background-color: var(--lavender);
@@ -252,6 +305,7 @@ form > div {
         margin-bottom: 10px;
     }
 }
+
 @media only screen and (min-width: 700px) {
     input[type="text"],
     input[type="email"],
@@ -270,10 +324,9 @@ form > div {
     #main_picture {
       width: 70%; 
     }
-  
-  }
-  
-  @media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (min-width: 1200px) {
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -290,5 +343,4 @@ form > div {
     #main_picture {
       width: 45%; 
     }
-  }
-  
+}
