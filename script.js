@@ -1,62 +1,63 @@
-// Función de validación y presentación de datos
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    // Prevenir el envío por defecto para validar primero
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
 
-    // Obtener valores de los campos
-    let nombre = document.getElementById('nombre').value.trim();
-    let apellidos = document.getElementById('apellidos').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let telefono = document.getElementById('telefono').value.trim();
-    let comentarios = document.getElementById('comentarios').value.trim();
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    // Regex para validar el formato del email (debe contener @ y terminar en .com o .es)
-    let emailRegex = /^[^\s@]+@[^\s@]+\.(com|es)$/;
-    // Regex para validar el formato del teléfono (10 dígitos)
-    let telefonoRegex = /^\d{10}$/;
+        // Obtener los valores de los campos del formulario
+        const nombre = document.getElementById('nombre').value.trim();
+        const apellidos = document.getElementById('apellidos').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const comentarios = document.getElementById('comentarios').value.trim();
 
-    // Variable para acumular los errores
-    let errores = [];
+        // Expresiones Regulares para validación
+        const nombreRegex = /^[a-zA-ZÀ-ÿ\s]{3,30}$/;
+        const apellidosRegex = /^[a-zA-ZÀ-ÿ\s]{3,50}$/;
+        const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        const telefonoRegex = /^\d{9}$/;  // Números de teléfono con 9 dígitos
+        const comentariosRegex = /^.{0,500}$/;  // Comentarios opcionales hasta 500 caracteres
 
-    // Verificación de longitud de nombre (entre 2 y 40 caracteres)
-    if (nombre.length < 2 || nombre.length > 40) {
-        errores.push("El nombre debe tener entre 2 y 40 caracteres.");
-    }
-    // Verificación de longitud de apellidos (entre 2 y 40 caracteres)
-    if (apellidos.length < 2 || apellidos.length > 40) {
-        errores.push("Los apellidos deben tener entre 2 y 40 caracteres.");
-    }
-    if (!emailRegex.test(email)) {
-        errores.push("Por favor, ingresa un correo electrónico válido que termine en .com o .es.");
-    }
-    if (!telefonoRegex.test(telefono)) {
-        errores.push("Por favor, ingresa un número de teléfono válido (10 dígitos).");
-    }
+        // Validación de Nombre
+        if (!nombreRegex.test(nombre)) {
+            alert('Por favor, ingresa un nombre válido (entre 3 y 30 caracteres, solo letras).');
+            return;
+        }
 
-    // Validación opcional de comentarios
-    if (comentarios.length > 0 && comentarios.length < 10) {
-        errores.push("Si ingresas comentarios, deben tener al menos 10 caracteres.");
-    }
+        // Validación de Apellidos
+        if (!apellidosRegex.test(apellidos)) {
+            alert('Por favor, ingresa apellidos válidos (entre 3 y 50 caracteres, solo letras).');
+            return;
+        }
 
-    // Mostrar errores uno por uno
-    if (errores.length > 0) {
-        let delay = 0;
-        errores.forEach(function(error) {
-            setTimeout(function() {
-                alert(error);
-            }, delay);
-            delay += 500; // Añadir un retraso de 500ms entre cada error
-        });
-        return; // Detener la ejecución si hay errores
-    }
+        // Validación de Correo Electrónico
+        if (!emailRegex.test(email)) {
+            alert('Por favor, ingresa un correo electrónico válido.');
+            return;
+        }
 
-    // Si pasa todas las validaciones, mostramos los datos
-    document.getElementById('resultNombre').textContent = nombre;
-    document.getElementById('resultApellidos').textContent = apellidos;
-    document.getElementById('resultEmail').textContent = email;
-    document.getElementById('resultTelefono').textContent = telefono;
-    document.getElementById('resultComentarios').textContent = comentarios || "No se ingresaron comentarios.";
+        // Validación de Teléfono
+        if (!telefonoRegex.test(telefono)) {
+            alert('Por favor, ingresa un número de teléfono válido (9 dígitos).');
+            return;
+        }
 
-    // Mostrar la sección de resultados
-    document.getElementById('resultContainer').style.display = 'block';
+        // Validación de Comentarios (Opcional)
+        if (!comentariosRegex.test(comentarios)) {
+            alert('Los comentarios no deben exceder los 500 caracteres.');
+            return;
+        }
+
+        // Si todo es válido, mostrar los resultados en pantalla
+        document.getElementById('resultNombre').textContent = nombre;
+        document.getElementById('resultApellidos').textContent = apellidos;
+        document.getElementById('resultEmail').textContent = email;
+        document.getElementById('resultTelefono').textContent = telefono;
+        document.getElementById('resultComentarios').textContent = comentarios;
+
+        document.getElementById('resultContainer').style.display = 'block';
+
+        alert('Formulario enviado correctamente.');
+        form.reset(); // Limpia el formulario después del envío
+    });
 });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,171 +23,46 @@
     <main>
         <article>
             <h1>Contacto</h1>
-        <p>Esta es la página de contacto</p>
-        <div id="resultContainer" style="display:none; margin-top: 20px;">
-          <h3>Datos Ingresados:</h3>
-          <p><strong>Nombre:</strong> <span id="resultNombre"></span></p>
-          <p><strong>Apellidos:</strong> <span id="resultApellidos"></span></p>
-          <p><strong>Correo electrónico:</strong> <span id="resultEmail"></span></p>
-          <p><strong>Teléfono de contacto:</strong> <span id="resultTelefono"></span></p>
-          <p><strong>Comentarios:</strong> <span id="resultComentarios"></span></p>
-      </div>
-        <div class="form-container">
-            <h2>Formulario de Contacto</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="apellidos">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono de contacto:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-                <div class="form-group">
-                    <label for="comentarios">Comentarios:</label>
-                    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar</button>
-            </form>
-        </div>
-     <!-- Antiguo Formulario
-        <form>
-            <ul>
-              <li> Nombre: <input type="text"></li>
-              <li>Apellidos: <input type="text"></li>
-              <li>Email: <input type="email"></li>
-              <li>Contraseña: <input type="password"></li>
-            </ul>
-            <br>
-        </form>
-    -->
-    <!-- Segundo intento 
-    <form id="contactForm">
-        <label for="fname">Nombre:</label>
-        <input
-          type="text"
-          id="fname"
-          name="fname"
-          placeholder="Introduce nombre..."
-          minlength="3"
-          maxlenght="30"
-          required
-        />
+            <p>Esta es la página de contacto</p>
 
-        <label for="lname">Apellidos:</label>
-        <input
-          type="text"
-          id="lname"
-          name="lname"
-          placeholder="Introduce apellidos..."
-          minlength="3"
-          maxlenght="30"
-          required
-        />
+            <!-- Resultados después de enviar el formulario -->
+            <div id="resultContainer" style="display:none; margin-top: 20px;">
+                <h3>Datos Ingresados:</h3>
+                <p><strong>Nombre:</strong> <span id="resultNombre"></span></p>
+                <p><strong>Apellidos:</strong> <span id="resultApellidos"></span></p>
+                <p><strong>Correo electrónico:</strong> <span id="resultEmail"></span></p>
+                <p><strong>Teléfono de contacto:</strong> <span id="resultTelefono"></span></p>
+                <p><strong>Comentarios:</strong> <span id="resultComentarios"></span></p>
+            </div>
 
-        <label for="fname">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Introduce email..."
-          required
-        />
-
-        <label for="tlf">Teléfono:</label>
-        <input
-          type="tel"
-          id="tlf"
-          name="tlf"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-          placeholder="Introduce teléfono..."
-          required
-        />
-
-        <label for="favorite">¿Cuál es tu comida favorita?:</label>
-        <select id="favorite" name="favorite">
-          <option value="paella">Paella</option>
-          <option value="tacos">Tacos</option>
-          <option value="cebiche">Cebiche</option>
-          <option value="cuscus">Cuscus</option>
-        </select>
-
-        <label for="season">¿En qué época quieres viajar para comer?</label>
-        <div>
-          <label for="spring"
-            ><input
-              type="radio"
-              id="spring"
-              name="season"
-              value="spring"
-            />primavera</label
-          >
-
-          <label for="summer"
-            ><input
-              type="radio"
-              id="summer"
-              name="season"
-              value="summer"
-            />verano</label
-          >
-
-          <label for="autumn"
-            ><input
-              type="radio"
-              id="autumn"
-              name="season"
-              value="autumn"
-            />Otoño</label
-          >
-
-          <label for="winter"
-            ><input
-              type="radio"
-              id="winter"
-              name="season"
-              value="winter"
-            />Invierno</label
-          >
-        </div>
-
-        <label for="comments">¿Observaciones?</label>
-        <textarea
-          rows="2"
-          cols="30"
-          name="comments"
-          wrap="hard"
-          placeholder="Tus observaciones..."
-        ></textarea>
-        <div>
-          <label
-            ><input
-              type="checkbox"
-              id="accept"
-              value="accept"
-              name="accept"
-            />
-            Acepto los términos legales</label
-          >
-
-          <label for="spam"
-            ><input type="checkbox" id="spam" value="spam" name="spam" />
-            Acepto recibir publicidad</label
-          >
-        </div>
-
-        <input type="submit" value="Enviar" />
-      </form>
+            <!-- Formulario de contacto -->
+            <div class="form-container">
+                <h2>Formulario de Contacto</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono de contacto:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios:</label>
+                        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
         </article>
- --> 
     </main>
      
     <footer class="footer">
@@ -219,6 +94,6 @@
             </div>
         </div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script> 
 </body>
 </html>
